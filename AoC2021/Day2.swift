@@ -2,71 +2,46 @@
 //  Day2.swift
 //  AoC2021
 //
-//  Created by Ryan Vidal on 11/30/21.
+//  Created by Ryan Vidal on 12/2/21.
 //
 
 import Foundation
 
-public class Day2: DailyPuzzle {
-    typealias CalculationInput = [Int]
+public let day2 = DailyPuzzleBase(solver: DayExampleSolver(),
+                                        testInput: testInputString,
+                                        puzzleInput: puzzleInputString)
 
-    public func SolvePart1Test() -> String {
-        return Solve(testInput, calculation: performPart1Calculation)
+public class Day2Solver: DailySolver {
+    public typealias CalculationInput = [Int]
+
+    public func ParseInput(_ input: String) -> CalculationInput {
+        let inputLines = input.components(separatedBy: "\n")
+        return inputLines.compactMap { Int($0) }
     }
 
-    public func SolvePart2Test() -> String {
-        return Solve(testInput, calculation: performPart2Calculation)
-    }
-
-    public func SolvePart1() -> String {
-        return Solve(puzzleInput, calculation: performPart1Calculation)
-    }
-
-    public func SolvePart2() -> String {
-        return Solve(puzzleInput, calculation: performPart2Calculation)
-    }
-
-    private func Solve(_ input: String, calculation: (CalculationInput) -> Double?) -> String {
-        let calculationInput = parseInput(input)
-        let answer = calculation(calculationInput)
-
-        guard let answer = answer else {
-            return "No answer!"
+    public func PerformPart1Calculation(_ input: CalculationInput) -> Double? {
+        guard input.count > 0 else {
+            return nil
         }
 
-        let formatter = NumberFormatter()
-        formatter.minimumFractionDigits = 0
-        formatter.numberStyle = .decimal
-
-        return "\(formatter.string(from: answer as NSNumber) ?? "No answer!")"
-    }
-
-    private func parseInput(_ input: String) -> CalculationInput {
-        var numbers: [Int] = []
-
-        // PARSING LOGIC HERE
-
-        return numbers
-    }
-
-    private func performPart1Calculation(_ input: CalculationInput) -> Double? {
-        // SOLUTION LOGIC HERE
+        // Part 1 calculation here
 
         return nil
     }
 
-    private func performPart2Calculation(_ input: CalculationInput) -> Double? {
-        // SOLUTION LOGIC HERE
+    public func PerformPart2Calculation(_ input: CalculationInput) -> Double? {
+        guard input.count > 3 else {
+            return nil
+        }
+
+        // Part 2 calculation here
 
         return nil
     }
-
-    private var testInput = """
-"""
-
-    private var alternateTestInput = """
-"""
-
-    private var puzzleInput = """
-"""
 }
+
+fileprivate let testInputString = """
+"""
+
+fileprivate let puzzleInputString = """
+"""

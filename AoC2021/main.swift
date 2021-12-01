@@ -8,9 +8,9 @@
 import Foundation
 
 let days: [DailyPuzzle] = [
-    DayExample(),
-    Day1(),
-    Day2(),
+    dayExample,
+    day1,
+    day2,
 ]
 
 let whichDay = 1
@@ -35,6 +35,9 @@ Part 2
 ---
 Test Answer: \(part2TestAnswer)
 Final Answer: \(part2Answer)
+
+
+
 """
 
 print(results)
