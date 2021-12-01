@@ -1,17 +1,17 @@
 //
-//  Day2.swift
+//  Day4.swift
 //  AoC2021
 //
-//  Created by Ryan Vidal on 12/2/21.
+//  Created by Ryan Vidal on 12/4/21.
 //
 
 import Foundation
 
-public let day2 = DailyPuzzleBase(solver: DayExampleSolver(),
-                                        testInput: testInputString,
-                                        puzzleInput: puzzleInputString)
+public let day4 = DailyPuzzleBase(solver: DayExampleSolver(),
+                                       testInput: testInputString,
+                                       puzzleInput: puzzleInputString)
 
-public class Day2Solver: DailySolver {
+public class Day4Solver: DailySolver {
     public typealias CalculationInput = [Int]
 
     public func ParseInput(_ input: String) -> CalculationInput {
