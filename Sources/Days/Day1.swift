@@ -20,10 +20,6 @@ public class Day1Solver: DailySolver {
     }
 
     public func PerformPart1Calculation(_ input: CalculationInput) -> Double? {
-        guard input.count > 0 else {
-            return nil
-        }
-
         var increaseCount = 0
         var lastDepth = input.first!
         for depth in input[1...] {
@@ -37,10 +33,6 @@ public class Day1Solver: DailySolver {
     }
 
     public func PerformPart2Calculation(_ input: CalculationInput) -> Double? {
-        guard input.count > 3 else {
-            return nil
-        }
-
         var increaseCount = 0
         var lastDepthWindow = input[0] + input[1] + input[2]
 

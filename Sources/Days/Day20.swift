@@ -7,7 +7,7 @@
 
 import Foundation
 
-public let day20 = DailyPuzzleBase(solver: DayExampleSolver(),
+public let day20 = DailyPuzzleBase(solver: Day20Solver(),
                                        testInput: testInputString,
                                        puzzleInput: puzzleInputString)
 
@@ -20,20 +20,14 @@ public class Day20Solver: DailySolver {
     }
 
     public func PerformPart1Calculation(_ input: CalculationInput) -> Double? {
-        guard input.count > 0 else {
-            return nil
-        }
-
+        
         // Part 1 calculation here
 
         return nil
     }
 
     public func PerformPart2Calculation(_ input: CalculationInput) -> Double? {
-        guard input.count > 3 else {
-            return nil
-        }
-
+        
         // Part 2 calculation here
 
         return nil
