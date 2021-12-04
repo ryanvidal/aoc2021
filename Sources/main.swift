@@ -36,7 +36,7 @@ let days: [DailyPuzzle] = [
     day25,
 ]
 
-let whichDay = 2
+let whichDay = 5
 let dayToRun = days[whichDay]
 
 let part1TestAnswer = dayToRun.SolvePart1Test()
