@@ -19,12 +19,12 @@ public class Day8Solver: DailySolver {
         return inputEntryStrings.map(Day8Entry.init)
     }
 
-    public func PerformPart1Calculation(_ input: CalculationInput) -> Double? {
-        return input.reduce(0.0) { $0 + Double($1.numberOfEasyCharactersInDisplay) }
+    public func PerformPart1Calculation(_ input: CalculationInput) -> Int? {
+        return input.reduce(0) { $0 + $1.numberOfEasyCharactersInDisplay }
     }
 
-    public func PerformPart2Calculation(_ input: CalculationInput) -> Double? {
-        return input.reduce(0.0) { $0 + Double($1.decodedDisplayValue) }
+    public func PerformPart2Calculation(_ input: CalculationInput) -> Int? {
+        return input.reduce(0) { $0 + $1.decodedDisplayValue }
     }
 }
 

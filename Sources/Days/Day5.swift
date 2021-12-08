@@ -18,7 +18,7 @@ public class Day5Solver: DailySolver {
         return input.components(separatedBy: "\n").map(Instruction.init)
     }
 
-    public func PerformPart1Calculation(_ input: CalculationInput) -> Double? {
+    public func PerformPart1Calculation(_ input: CalculationInput) -> Int? {
         var map = [Int: [Int: Int]]()
 
         for instruction in input {
@@ -42,10 +42,10 @@ public class Day5Solver: DailySolver {
             }
         }
 
-        return Double(map.reduce(0) {$0 + $1.value.reduce(0) { $0 + ($1.value >= 2 ? 1 : 0) } })
+        return map.reduce(0) {$0 + $1.value.reduce(0) { $0 + ($1.value >= 2 ? 1 : 0) } }
     }
 
-    public func PerformPart2Calculation(_ input: CalculationInput) -> Double? {
+    public func PerformPart2Calculation(_ input: CalculationInput) -> Int? {
         var map = [Int: [Int: Int]]()
 
         for instruction in input {
@@ -95,7 +95,7 @@ public class Day5Solver: DailySolver {
             }
         }
 
-        return Double(map.reduce(0) {$0 + $1.value.reduce(0) { $0 + ($1.value >= 2 ? 1 : 0) } })
+        return map.reduce(0) {$0 + $1.value.reduce(0) { $0 + ($1.value >= 2 ? 1 : 0) } }
     }
 }
 
@@ -104,8 +104,8 @@ public struct Instruction {
 
     init(line: String) {
         var points = line.components(separatedBy: " -> ")
-        let startingPoint = points.remove(at: 0).components(separatedBy: ",").map { Int($0)! }
-        let endingPoint = points.remove(at: 0).components(separatedBy: ",").map { Int($0)! }
+        let startingPoint = points.remove(at: 0).components(separatedBy: ",").compactMap(Int.init)
+        let endingPoint = points.remove(at: 0).components(separatedBy: ",").compactMap(Int.init)
         self.start = (startingPoint[0], startingPoint[1])
         self.end = (endingPoint[0], endingPoint[1])
     }

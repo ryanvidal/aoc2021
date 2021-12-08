@@ -10,6 +10,6 @@ import Foundation
 public protocol DailySolver {
     associatedtype CalculationInput
     func ParseInput(_ input: String) -> CalculationInput
-    func PerformPart1Calculation(_ input: CalculationInput) -> Double?
-    func PerformPart2Calculation(_ input: CalculationInput) -> Double?
+    func PerformPart1Calculation(_ input: CalculationInput) -> Int?
+    func PerformPart2Calculation(_ input: CalculationInput) -> Int?
 }

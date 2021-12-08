@@ -16,10 +16,10 @@ public class Day1Solver: DailySolver {
 
     public func ParseInput(_ input: String) -> CalculationInput {
         let inputLines = input.components(separatedBy: "\n")
-        return inputLines.compactMap { Int($0) }
+        return inputLines.compactMap(Int.init)
     }
 
-    public func PerformPart1Calculation(_ input: CalculationInput) -> Double? {
+    public func PerformPart1Calculation(_ input: CalculationInput) -> Int? {
         var increaseCount = 0
         var lastDepth = input.first!
         for depth in input[1...] {
@@ -29,10 +29,10 @@ public class Day1Solver: DailySolver {
             lastDepth = depth
         }
 
-        return Double(increaseCount)
+        return increaseCount
     }
 
-    public func PerformPart2Calculation(_ input: CalculationInput) -> Double? {
+    public func PerformPart2Calculation(_ input: CalculationInput) -> Int? {
         var increaseCount = 0
         var lastDepthWindow = input[0] + input[1] + input[2]
 
@@ -44,7 +44,7 @@ public class Day1Solver: DailySolver {
             lastDepthWindow = depthWindow
         }
 
-        return Double(increaseCount)
+        return increaseCount
     }
 }
 

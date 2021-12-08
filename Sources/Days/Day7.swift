@@ -16,34 +16,34 @@ public class Day7Solver: DailySolver {
 
     public func ParseInput(_ input: String) -> CalculationInput {
         let inputLines = input.components(separatedBy: ",")
-        return inputLines.compactMap { Int($0)! }
+        return inputLines.compactMap(Int.init)
     }
 
-    public func PerformPart1Calculation(_ input: CalculationInput) -> Double? {
+    public func PerformPart1Calculation(_ input: CalculationInput) -> Int? {
         let values = Set(input).compacted().sorted()
         let possiblePositions = Array(values.first!...values.last!)
 
         let fuelUsed = possiblePositions.map { position in
-            input.reduce(0.0) { $0 + Double(abs($1 - position)) }
+            input.reduce(0) { $0 + abs($1 - position) }
         }
 
         return fuelUsed.sorted().first!
     }
 
-    public func PerformPart2Calculation(_ input: CalculationInput) -> Double? {
+    public func PerformPart2Calculation(_ input: CalculationInput) -> Int? {
         let values = Set(input).compacted().sorted()
         let possiblePositions = Array(values.first!...values.last!)
 
         let fuelUsed = possiblePositions.map { position in
-            input.reduce(0.0) { $0 + summation(abs($1 - position)) }
+            input.reduce(0) { $0 + summation(abs($1 - position)) }
         }
 
         return fuelUsed.sorted().first!
     }
 }
 
-func summation(_ n: Int) -> Double {
-    return Double(n) * Double(n+1) / 2.0
+func summation(_ n: Int) -> Int {
+    return n * (n+1) / 2
 }
 
 fileprivate let testInputString = """

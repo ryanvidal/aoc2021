@@ -41,7 +41,7 @@ public class DailyPuzzleBase<Solver: DailySolver>: DailyPuzzle {
         return Solve(puzzleInput, calculation: solver.PerformPart2Calculation)
     }
 
-    private func Solve(_ input: String, calculation: (Solver.CalculationInput) -> Double?) -> String {
+    private func Solve(_ input: String, calculation: (Solver.CalculationInput) -> Int?) -> String {
         let calculationInput = solver.ParseInput(input)
         let answer = calculation(calculationInput)
 
@@ -49,11 +49,6 @@ public class DailyPuzzleBase<Solver: DailySolver>: DailyPuzzle {
             return "No answer!"
         }
 
-        let formatter = NumberFormatter()
-        formatter.minimumFractionDigits = 0
-        formatter.numberStyle = .decimal
-        formatter.usesGroupingSeparator = false
-
-        return "\(formatter.string(from: answer as NSNumber) ?? "No answer!")"
+        return "\(answer)"
     }
 }

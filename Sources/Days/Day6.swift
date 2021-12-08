@@ -16,26 +16,26 @@ public class Day6Solver: DailySolver {
 
     public func ParseInput(_ input: String) -> CalculationInput {
         let inputLines = input.components(separatedBy: ",")
-        return inputLines.compactMap { Int($0)! }
+        return inputLines.compactMap(Int.init)
     }
 
-    public func PerformPart1Calculation(_ input: CalculationInput) -> Double? {
-        return input.reduce(0.0) { $0 + numberOfFish(after: 80, daysToDelay: $1) }
+    public func PerformPart1Calculation(_ input: CalculationInput) -> Int? {
+        return input.reduce(0) { $0 + numberOfFish(after: 80, daysToDelay: $1) }
     }
 
-    public func PerformPart2Calculation(_ input: CalculationInput) -> Double? {
-        return input.reduce(0.0) { $0 + numberOfFish(after: 256, daysToDelay: $1) }
+    public func PerformPart2Calculation(_ input: CalculationInput) -> Int? {
+        return input.reduce(0) { $0 + numberOfFish(after: 256, daysToDelay: $1) }
     }
 }
 
-fileprivate var cache: [Pair:Double] = [:]
+fileprivate var cache: [Pair:Int] = [:]
 
-private func numberOfFish(after numDays: Int, daysToDelay: Int) -> Double {
+private func numberOfFish(after numDays: Int, daysToDelay: Int) -> Int {
     if let cachedValue = cache[Pair(numDays, daysToDelay)] { return cachedValue }
 
-    guard numDays >= daysToDelay else { return 1.0 }
+    guard numDays >= daysToDelay else { return 1 }
 
-    var finalCount = 1.0
+    var finalCount = 1
 
     let spawns = (numDays - daysToDelay + 6) / 7
 
@@ -62,7 +62,7 @@ private func numberOfFish(after numDays: Int, daysToDelay: Int) -> Double {
 //            school.append(contentsOf: newLanternFish)
 //        }
 //
-//        return Double(school.count)
+//        return school.count
 
 //public class LanternFish {
 //    static let gestationStart = 6

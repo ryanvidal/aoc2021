@@ -20,8 +20,8 @@ public class Day2Solver: DailySolver {
         return inputLines.map(Move.init)
     }
 
-    public func PerformPart1Calculation(_ input: CalculationInput) -> Double? {
-        var (depth, horizontal) = (0.0, 0.0)
+    public func PerformPart1Calculation(_ input: CalculationInput) -> Int? {
+        var (depth, horizontal) = (0, 0)
 
         for move in input {
             move.adjustPosition(depth: &depth, horizontal: &horizontal)
@@ -30,8 +30,8 @@ public class Day2Solver: DailySolver {
         return depth * horizontal
     }
 
-    public func PerformPart2Calculation(_ input: CalculationInput) -> Double? {
-        var (depth, horizontal, aim) = (0.0, 0.0, 0.0)
+    public func PerformPart2Calculation(_ input: CalculationInput) -> Int? {
+        var (depth, horizontal, aim) = (0, 0, 0)
 
         for move in input {
             move.adjustPosition(depth: &depth, horizontal: &horizontal, aim: &aim)
@@ -44,11 +44,11 @@ public class Day2Solver: DailySolver {
 // MARK: - Move -
 extension Day2Solver {
     public enum Move {
-        case forward(x: Double)
-        case down(x: Double)
-        case up(x: Double)
+        case forward(x: Int)
+        case down(x: Int)
+        case up(x: Int)
 
-        private func newDepth(_ initialDepth: Double) -> Double {
+        private func newDepth(_ initialDepth: Int) -> Int {
             switch self {
             case .forward:
                 return initialDepth
@@ -59,7 +59,7 @@ extension Day2Solver {
             }
         }
 
-        private func newDepth(_ initialDepth: Double, aim: Double) -> Double {
+        private func newDepth(_ initialDepth: Int, aim: Int) -> Int {
             switch self {
             case .forward(let x):
                 return initialDepth + aim * x
@@ -68,7 +68,7 @@ extension Day2Solver {
             }
         }
 
-        private func newHorizontal(_ initialHorizontal: Double) -> Double {
+        private func newHorizontal(_ initialHorizontal: Int) -> Int {
             switch self {
             case .forward(let x):
                 return initialHorizontal + x
@@ -77,7 +77,7 @@ extension Day2Solver {
             }
         }
 
-        private func newAim(_ initialAim: Double) -> Double {
+        private func newAim(_ initialAim: Int) -> Int {
             switch self {
             case .down(let x):
                 return initialAim + x
@@ -88,13 +88,13 @@ extension Day2Solver {
             }
         }
 
-        public func adjustPosition(depth: inout Double, horizontal: inout Double) {
+        public func adjustPosition(depth: inout Int, horizontal: inout Int) {
             // Ignore aim
             depth = newDepth(depth)
             horizontal = newHorizontal(horizontal)
         }
 
-        public func adjustPosition(depth: inout Double, horizontal: inout Double, aim: inout Double) {
+        public func adjustPosition(depth: inout Int, horizontal: inout Int, aim: inout Int) {
             aim = newAim(aim)
             depth = newDepth(depth, aim: aim)
             horizontal = newHorizontal(horizontal)
@@ -104,11 +104,11 @@ extension Day2Solver {
             let instructionParts = instruction.components(separatedBy: " ")
             switch instructionParts[0] {
             case "forward":
-                self = .forward(x: Double(instructionParts[1])!)
+                self = .forward(x: Int(instructionParts[1])!)
             case "down":
-                self = .down(x: Double(instructionParts[1])!)
+                self = .down(x: Int(instructionParts[1])!)
             case "up":
-                self = .up(x: Double(instructionParts[1])!)
+                self = .up(x: Int(instructionParts[1])!)
             default:
                 fatalError()
             }

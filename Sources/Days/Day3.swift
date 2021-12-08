@@ -19,7 +19,7 @@ public class Day3Solver: DailySolver {
         return input.components(separatedBy: "\n")
     }
 
-    public func PerformPart1Calculation(_ input: CalculationInput) -> Double? {
+    public func PerformPart1Calculation(_ input: CalculationInput) -> Int? {
         var counts = [Int]()
         input.forEach { line in
             for (index, bit) in line.enumerated() {
@@ -47,12 +47,11 @@ public class Day3Solver: DailySolver {
             return mask
         }()
         let epsilon = ~gamma & mask
-        print("Gamma: \(gamma), Epsilon: \(epsilon)")
 
-        return Double(gamma) * Double(epsilon)
+        return gamma * epsilon
     }
 
-    public func PerformPart2Calculation(_ input: CalculationInput) -> Double? {
+    public func PerformPart2Calculation(_ input: CalculationInput) -> Int? {
         let numberOfBits = input.first!.count
         var O2List: [Int] = input.map { Int($0, radix: 2)! }.sorted()
         var CO2List = O2List
@@ -68,7 +67,7 @@ public class Day3Solver: DailySolver {
             }
         }
 
-        return Double(O2List.first!) * Double(CO2List.first!)
+        return O2List.first! * CO2List.first!
     }
 }
 

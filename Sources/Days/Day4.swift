@@ -18,8 +18,8 @@ public class Day4Solver: DailySolver {
         return Day4Data(input)
     }
 
-    public func PerformPart1Calculation(_ input: CalculationInput) -> Double? {
-        var boardScore: Double? = nil
+    public func PerformPart1Calculation(_ input: CalculationInput) -> Int? {
+        var boardScore: Int? = nil
 
         while (boardScore == nil && !input.numbers.isEmpty) {
             boardScore = input.callNumber()
@@ -28,7 +28,7 @@ public class Day4Solver: DailySolver {
         return boardScore
     }
 
-    public func PerformPart2Calculation(_ input: CalculationInput) -> Double? {
+    public func PerformPart2Calculation(_ input: CalculationInput) -> Int? {
         return input.findLastBoardScore()
     }
 }
@@ -39,32 +39,26 @@ extension Day4Solver {
         var numbers: [Int]
         init(_ rawInput: String) {
             let elements = rawInput.components(separatedBy: "\n").split { $0.isEmpty }
-            self.numbers = elements.first!.first!.components(separatedBy: ",").map { Int($0)! }
+            self.numbers = elements.first!.first!.components(separatedBy: ",").compactMap(Int.init)
             self.boards = elements[1...].map { boardStrings in
-                BingoBoard(numbers: boardStrings.map { row in
-                    row
-                        .components(separatedBy: " ")
-                        .compactMap {
-                            Int($0)
-                        }
-                })
+                BingoBoard(numbers: boardStrings.map { $0.components(separatedBy: " ").compactMap(Int.init) })
             }
         }
 
-        public func callNumber() -> Double? {
+        public func callNumber() -> Int? {
             let calledNumber = numbers.remove(at: 0)
 
             for board in boards {
                 if let score = board.markNumber(calledNumber) {
-                    return score * Double(calledNumber)
+                    return score * calledNumber
                 }
             }
 
             return nil
         }
 
-        public func findLastBoardScore() -> Double? {
-            var finalScore: Double? = nil
+        public func findLastBoardScore() -> Int? {
+            var finalScore: Int? = nil
             while (!numbers.isEmpty) {
                 let calledNumber = numbers.remove(at: 0)
 
@@ -76,7 +70,7 @@ extension Day4Solver {
 
                 if boards.filter({ !$0.haveWon }).isEmpty {
                     guard let finalScore = finalScore else { return nil }
-                    return finalScore * Double(calledNumber)
+                    return finalScore * calledNumber
                 }
             }
 
@@ -102,7 +96,7 @@ extension Day4Solver {
             board.forEach { row in row.forEach { space in spaces[space.number] = space } }
         }
 
-        public func markNumber(_ number: Int) -> Double? {
+        public func markNumber(_ number: Int) -> Int? {
             if let space = spaces[number] {
                 space.marked = true
             }
@@ -136,11 +130,11 @@ extension Day4Solver {
             return false
         }
 
-        private var currentScore: Double {
-            var score = 0.0
+        private var currentScore: Int {
+            var score = 0
             for row in board {
                 for space in row {
-                    score += space.marked ? 0 : Double(space.number)
+                    score += space.marked ? 0 : space.number
                 }
             }
 
