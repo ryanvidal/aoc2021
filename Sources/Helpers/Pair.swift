@@ -22,4 +22,12 @@ public struct Pair: Hashable {
     static public func ==(left: Pair, right: Pair) -> Bool {
         return left.val == right.val
     }
+
+    public var x: Int {
+        return val.0
+    }
+
+    public var y: Int {
+        return val.1
+    }
 }
