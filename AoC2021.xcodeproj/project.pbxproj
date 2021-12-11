@@ -39,6 +39,7 @@
 		047DBC3E2757EA1A003043DA /* Day19.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DBC272757EA1A003043DA /* Day19.swift */; };
 		047DBC412757EBFD003043DA /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 047DBC402757EBFD003043DA /* Algorithms */; };
 		04A64A6A2757B33400B78568 /* DailySolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A64A692757B33400B78568 /* DailySolver.swift */; };
+		04CA6FF42763778A006EF188 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA6FF32763778A006EF188 /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,6 +87,7 @@
 		047DBC262757EA1A003043DA /* Day12.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day12.swift; sourceTree = "<group>"; };
 		047DBC272757EA1A003043DA /* Day19.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day19.swift; sourceTree = "<group>"; };
 		04A64A692757B33400B78568 /* DailySolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySolver.swift; sourceTree = "<group>"; };
+		04CA6FF32763778A006EF188 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			children = (
 				0459468E275E489700A0A65F /* Sequence+countWhere.swift */,
 				04594690275E59AF00A0A65F /* Pair.swift */,
+				04CA6FF32763778A006EF188 /* Stack.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				047DBC3D2757EA1A003043DA /* Day12.swift in Sources */,
 				047DBC342757EA1A003043DA /* Day20.swift in Sources */,
 				047DBC3E2757EA1A003043DA /* Day19.swift in Sources */,
+				04CA6FF42763778A006EF188 /* Stack.swift in Sources */,
 				047DBC392757EA1A003043DA /* Day16.swift in Sources */,
 				047DBC2C2757EA1A003043DA /* Day9.swift in Sources */,
 				047DBC372757EA1A003043DA /* Day15.swift in Sources */,
