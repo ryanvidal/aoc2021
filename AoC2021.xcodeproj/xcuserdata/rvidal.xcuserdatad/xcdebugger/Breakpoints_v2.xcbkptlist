@@ -3,4 +3,86 @@
    uuid = "F9B9D04B-2B83-4EBC-91C1-F02DBDA67E81"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "08A50481-B31D-46CD-BE43-391CDE497868"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/Days/Day14.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2DB63B34-5F78-4FAE-AA3C-99B42216C7FE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/Days/Day14.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "elementCountDifference"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "315EEB28-D726-4BDF-8B72-9F978467D9FB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/Days/Day15.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "riskOfLeastRiskyPath(startingAt:visitedList:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "315EEB28-D726-4BDF-8B72-9F978467D9FB - bf5e0cb0f06be0b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AoC2021.Map.riskOfLeastRiskyPath(startingAt: AoC2021.Pair, visitedList: Swift.Set&lt;AoC2021.Pair&gt;) -&gt; Swift.Int"
+                  moduleName = "AoC2021"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rvidal/Development/advent-of-code/aoc2021/Sources/Days/Day15.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "1547">
+               </Location>
+               <Location
+                  uuid = "315EEB28-D726-4BDF-8B72-9F978467D9FB - 75b0535878207325"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (inout Swift.Dictionary&lt;AoC2021.Pair, Swift.Int&gt;, AoC2021.Pair) -&gt; () in AoC2021.Map.riskOfLeastRiskyPath(startingAt: AoC2021.Pair, visitedList: Swift.Set&lt;AoC2021.Pair&gt;) -&gt; Swift.Int"
+                  moduleName = "AoC2021"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rvidal/Development/advent-of-code/aoc2021/Sources/Days/Day15.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "256">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
